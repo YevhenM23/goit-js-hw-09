@@ -30,3 +30,26 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style: none;
+  padding: 24px 156px;
+  margin: 0;
+}
+
+.gallery-item {
+  flex-basis: calc(33.333% - 20px);
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery img:hover {
+  cursor: zoom-in;
+}
