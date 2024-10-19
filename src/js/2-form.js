@@ -20,15 +20,19 @@ function handleInput(event) {
 
 function retInfo() {
     const infoFromStorage = localStorage.getItem(KEY);
-    const savedInfo = JSON.parse(infoFromStorage);
 
-    if (savedInfo.email) {
-        input.value = savedInfo.email;
-        formData.email = savedInfo.email;
-    } 
-    if (savedInfo.message) {
-        textarea.value = savedInfo.message;
-        formData.message = savedInfo.message;
+    if (infoFromStorage) {
+        const savedInfo = JSON.parse(infoFromStorage);
+    
+    
+        if (savedInfo.email) {
+            input.value = savedInfo.email;
+            formData.email = savedInfo.email;
+        }
+        if (savedInfo.message) {
+            textarea.value = savedInfo.message;
+            formData.message = savedInfo.message;
+        }
     }
 }
 
@@ -38,8 +42,7 @@ function handleSubmit(event) {
         alert("Fill please all fields");
         return;
     }
-    console.log(formData.email.trim());
-    console.log(formData.message.trim());
+    console.log(formData);
     
     event.currentTarget.reset();
     localStorage.removeItem(KEY);
